@@ -1,26 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Counter from './Counter';
 
-function App() {
-  return (
-    <div className="App">
+
+/* function App() { */
+class Header extends Component {
+  render() {
+    return(
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="App-title">{this.props.title}</h1>
+
       </header>
+    );
+  }
+}
+
+class App extends Component {
+  render() {
+  return (
+    <div className="App">
+      <Header title={"Hello from App"} />
+      <Counter />
     </div>
   );
+}
 }
 
 export default App;
